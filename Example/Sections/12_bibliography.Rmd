@@ -1,0 +1,5 @@
+\doublespacing
+
+# References {-}
+
+<!-- The bibliography will automatically be put into this section, as long as it's the last section -->

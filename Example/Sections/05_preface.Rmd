@@ -1,0 +1,27 @@
+\doublespacing
+
+# Preface {-}
+
+The Preface must include only the following:
+
+- A statement indicating the relative contributions of all collaborators and co-authors (including supervisors and members of the supervisory committee) of publications or material submitted for publication, emphasizing details of the student’s contribution and stating the proportion of research and writing conducted by the student. The statement must include details about the student’s contribution to the following:
+
+    - Identification and design of the research.
+
+    - Contributions to the various parts of the research.
+
+    - Analysis of the research data, if applicable.
+
+    - Preparation of manuscripts, if any.
+
+    - If the student was the sole contributor to all work involved in the thesis or dissertation and in the writing of the thesis or dissertation, a statement should be included to that effect.
+
+- A concise description of all use of generative artificial intelligence (AI)  in the research described, the drafting of, and the preparation of the thesis or dissertation.  If generative AI was not used in any way, a clear statement that generative AI was not used for any aspects of this work must be included. For a clear description of what constitutes generative AI, visit https://genai.ubc.ca/
+
+- A list of any publications or submissions arising from work presented in the thesis/dissertation including the title of the article and name of the publisher (only if the article has been accepted or published), and the chapter(s) of the thesis/dissertation in which the work is located.
+
+- The name of the particular UBC Research Ethics Board, and the Certificate Number(s) of the Ethics Certificate(s) obtained, if ethics approval was required for the research.
+
+- If copyrighted materials are included in the thesis/dissertation, they need to be documented here. Please check the requirements in the “Copyright” section below.
+
+\newpage

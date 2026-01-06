@@ -1,0 +1,7 @@
+\doublespacing
+
+# Lay Summary {-}
+
+The lay summary explains the key goals and contributions of the research/scholarly work in terms that can be understood by the general public. It does not use technical terms and discipline-specific language. **It must not exceed 150 words in length.**
+
+\newpage

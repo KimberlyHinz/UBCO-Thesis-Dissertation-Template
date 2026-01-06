@@ -1,0 +1,19 @@
+\doublespacing
+
+# Abstract {-}
+
+The abstract:
+
+- Is a concise and accurate summary of the thesis.
+
+- Should state the problem, the methods of investigation, and the general conclusions.
+
+- Must not contain tables, graphs or illustrations.
+
+- **Must not exceed 350 words.**
+
+- Should contain keywords that will facilitate automated information retrieval.
+
+- Must be the only abstract in the thesis.
+
+\newpage

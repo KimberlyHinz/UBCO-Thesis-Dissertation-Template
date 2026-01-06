@@ -1,0 +1,45 @@
+\doublespacing
+
+The following individuals certify that they have read and recommend to the College of Graduate Studies for acceptance,
+a thesis entitled:
+
+\uline{[This is the thesis title]}, \newline
+
+submitted by [Your Name] in partial fulfillment of the requirements of the degree of the degree of Master of Science.
+
+\bigskip
+
+**\ \ \ [Insert Name Here]**
+
+\vspace{-20pt}
+\newcommand{\hrulewidth}{\linewidth}
+\noindent\rule{\hrulewidth}{0.4pt}
+\vspace{-40pt}
+
+Supervisor
+
+**\ \ \ [Insert Name Here]**
+
+\vspace{-20pt}
+\noindent\rule{\hrulewidth}{0.4pt}
+\vspace{-40pt}
+
+Supervisory Committee Member
+
+**\ \ \ [Insert Name Here]**
+
+\vspace{-20pt}
+\noindent\rule{\hrulewidth}{0.4pt}
+\vspace{-40pt}
+
+Supervisory Committee Member
+
+**\ \ \ [Insert Name Here]**
+
+\vspace{-20pt}
+\noindent\rule{\hrulewidth}{0.4pt}
+\vspace{-40pt}
+
+University Examiner
+
+\newpage

@@ -1,0 +1,23 @@
+\doublespacing
+
+# Chapter 1: ____
+
+This is a test sentence [@manus_technical_2024; @buchanan_relating_2024]. This sentence is just going to keep going so I can get some spacing correct. I'll just keep rambling for a little while until this paragraph is a sufficient length. One more sentence left to get this done.
+
+(ref:fig1) A scatterplot of *fake* data using **ggplot**.
+
+This is a test sentence that will reference a figure (Figure \@ref(fig:fig1)).
+
+```{r fig1, fig.cap='(ref:fig1)', echo=FALSE}
+data.frame(x = 1:20, 
+           y = 1:20) %>% 
+  ggplot(aes(x = x, y = y)) +
+  geom_point() + 
+  theme_bw()
+```
+
+The thesis must clearly state its theme, hypotheses and/or goals (sometimes called “the research question(s)”), and provide sufficient background information to enable a non-specialist scholar to understand them. It must contain a thorough review of relevant literature, perhaps in a separate chapter.
+
+Note: The thesis must only contain one section titled “Introduction”. (Please see an exemption for published material in the “Including Published Material in a Thesis or Dissertation section below). 
+
+\newpage

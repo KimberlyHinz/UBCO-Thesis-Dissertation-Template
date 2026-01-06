@@ -1,0 +1,25 @@
+\setstretch{0.5} <!-- Needed for spacing -->
+
+# Table of Contents {-}
+
+\vspace{-20pt} <!-- Needed to reduce vertical space between section title and table -->
+
+\tableofcontents
+
+\newpage
+
+# List of Tables {-}
+
+\vspace{-20pt}
+
+\listoftables
+
+\newpage
+
+# List of Figures {-}
+
+\vspace{-20pt}
+
+\listoffigures
+
+\newpage

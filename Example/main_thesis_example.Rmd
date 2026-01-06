@@ -1,0 +1,99 @@
+---
+output:
+  bookdown::pdf_book: # Comment out if you want a word output
+  # bookdown::word_document2: # Un comment if you want a word output
+    toc: no # Comment out if you want a word output
+    # toc: yes # Un comment if you want a word output
+    keep_tex: no
+    number_sections: yes
+    fig_caption: yes
+    latex_engine: xelatex
+    includes:
+      in_header: preamble.tex
+fontsize: 12pt
+# bibliography: References/reference_list.bib # Uncomment and change to your bibliography
+# csl: References/microbiome.csl # Unccoment and change to your CSL
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+# This option prevents anything in code chunks from being print to your thesis
+# I.e., anything in code chunks will not show up in your thesis
+knitr::opts_chunk$set(echo = FALSE)
+
+library("tidyverse")
+library("flextable")
+```
+
+```{r flextable defaults, include=FALSE}
+# This is only needed if you want to use the flextable R package to create tables
+set_flextable_defaults(font.family = "Times New Roman", 
+                       font.size = 12, 
+                       theme_fun = "theme_apa")
+```
+
+<!-- Title page -->
+
+```{r title page, child="./Sections/01_title_page.Rmd", eval=TRUE}
+```
+
+<!-- Committee recommendation form -->
+
+\pagenumbering{roman}
+\setcounter{page}{2}
+
+```{r committee form, child="./Sections/02_committee_form.Rmd", eval=TRUE}
+```
+
+<!-- Abstract -->
+
+```{r abstract, child="./Sections/03_abstract.Rmd", eval=TRUE}
+```
+
+<!-- Lay Summary -->
+
+```{r lay summary, child="./Sections/04_lay_summary.Rmd", eval=TRUE}
+```
+
+<!-- Preface -->
+
+```{r preface, child="./Sections/05_preface.Rmd", eval=TRUE}
+```
+
+<!-- Tables of Content -->
+
+```{r tables of content, child="./Sections/06_tables_of_content.Rmd", eval=TRUE}
+```
+
+<!-- Glossary -->
+
+```{r glossary, child="./Sections/07_glossary.Rmd", eval=TRUE}
+```
+
+<!-- Acknowledgements -->
+
+```{r acknowledgements, child="./Sections/08_acknowledgements.Rmd", eval=TRUE}
+```
+
+<!-- Chapter 1 - Introduction -->
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+```{r chapter 1, child="./Sections/09_chapter1.Rmd", eval=TRUE}
+```
+
+<!-- Chapter 2 - Research -->
+
+```{r chapter 2, child="./Sections/10_chapter2.Rmd", eval=TRUE}
+```
+
+<!-- Chapter 3 - Conclusion -->
+
+```{r chapter 3, child="./Sections/11_chapter3.Rmd", eval=TRUE}
+```
+
+<!-- Bibliography -->
+
+```{r bibliography, child="./Sections/12_bibliography.Rmd", eval=TRUE}
+```

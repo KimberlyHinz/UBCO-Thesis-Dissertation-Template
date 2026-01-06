@@ -1,0 +1,16 @@
+\doublespacing
+
+# Glossary {-}
+
+```{r glossary flextable}
+data.frame(Abbreviation = c("EG", "IE"), 
+           Definition = c("Exempli gratia", "Id Est")) %>% 
+  arrange(Abbreviation, Definition) %>% 
+  flextable() %>% 
+  align(part = "all", j = 2, align = "left") %>% 
+  bold(part = "header") %>% 
+  width(width = c(3.5, 13.01), unit = "cm")
+  # autofit()
+```
+
+\newpage

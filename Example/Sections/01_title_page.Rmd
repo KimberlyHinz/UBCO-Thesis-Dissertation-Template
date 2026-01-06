@@ -1,0 +1,45 @@
+<!-- This line ensures there's no page numbers -->
+\thispagestyle{empty} 
+
+\begin{center}
+\setstretch{3}
+
+\textbf{[This is the thesis title]}
+
+\bigskip
+
+by
+
+\bigskip
+
+[Your Name]
+
+\bigskip
+
+[Your credentials and year of graduation, one line for each]
+
+\bigskip
+
+A THESIS SUBMITTED IN PARTIAL FULFILLMENT OF
+
+THE REQUIREMENTS FOR THE DEGREE OF
+
+MASTER OF SCIENCE
+
+in
+
+THE COLLEGE OF GRADUATE STUDIES
+
+(Biology)
+
+THE UNIVERSITY OF BRITISH COLUMBIA
+
+(Okanagan)
+
+© [Your Name], `r lubridate::year(Sys.Date())`
+
+\end{center}
+
+\doublespacing
+
+\newpage

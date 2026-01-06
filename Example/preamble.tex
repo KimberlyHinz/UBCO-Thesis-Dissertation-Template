@@ -1,0 +1,83 @@
+% --- Set main fonts -------------------------------------------
+\usepackage{fontspec}
+\setmainfont{Times New Roman}					% Set font to Times New Roman
+\usepackage{setspace}
+\onehalfspacing							% Set line spacing to 1.5
+\usepackage{ragged2e}
+\justifying      						% Justifying alignment
+\usepackage{sectsty}
+
+\usepackage{titlesec}
+
+\usepackage[normalem]{ulem}
+
+% --- Table of contents ----------------------------------------
+% ----- Add leader lines -----
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} 		% For header 1
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}} 	% For header 2
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}} 	% For header 3
+
+% ----- Remove titles (I'm using my own) -----
+\renewcommand{\contentsname}{} 					% Removes the "Contents" title
+\renewcommand{\listfigurename}{}				% Removes the "List of Figures" title
+\renewcommand{\listtablename}{}					% Removes the "List of Tables" title
+
+% ----- Add "Figure" in List of Figures -----
+% This adds the word "Figure" to the beginning of the captions
+% in the List of Figures
+\renewcommand{\cftfigpresnum}{Figure~}				% This is what appears before the numbers
+\renewcommand{\cftfigaftersnum}{.}				% This adds a period after the number
+\setlength{\cftfignumwidth}{4em}				% This increases the space after the number -- may need to be increased/decreased
+
+% ----- Add "Table" in List of Tables -----
+% This adds the word "Table" to the beginning of the captions
+% in the List of Tables
+\renewcommand{\cfttabpresnum}{Table~}				% This is what appears before the numbers
+\renewcommand{\cfttabaftersnum}{.}				% This adds a period after the number
+\setlength{\cfttabnumwidth}{4em}				% This increases the space after the number -- may need to be increased/decreased
+
+% --- Section header 1 styling ---------------------------------
+\sectionfont{\fontsize{14}{14}\selectfont\bfseries\centering}	% Heading 1 is size 14, 14 pt line spacing (for that line), bold, and centered
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+
+\titleformat{\section}[block]					% This removes the numbering of the heading 1 titles
+  {\normalfont\fontsize{14}{14}\bfseries\centering}
+  {}
+  {0pt}
+  {}
+
+% --- Section header 2 styling ---------------------------------
+\subsectionfont{\fontsize{12}{12}\selectfont\bfseries}
+\titlespacing*{\subsection}{0pt}{12pt}{0pt}
+
+% --- Section header 3 styling ---------------------------------
+\subsubsectionfont{\fontsize{12}{12}\selectfont\bfseries}
+\titlespacing*{\subsubsection}{0pt}{12pt}{0pt}
+
+% --- Figure and table caption styling -------------------------
+\usepackage{caption}
+\captionsetup{labelfont={bf,it},font=it, 			% Bold and italicise the labels, italicise the rest
+              justification=justified, 				% Justify the caption
+              singlelinecheck=false}				% Do not justify single lines
+
+% --- Page margins ---------------------------------------------
+\usepackage{geometry}
+\geometry{letterpaper,top=1in,bottom=1in,left=1.25in,right=1in}	% Set margins to 1 inch, except the left one is 1.25 for binding
+
+% Bibliography -------------------------------------------------
+% Force hanging indent inside CSLReferences list environment
+\usepackage{etoolbox}
+
+% Patch the definition of CSLReferences directly
+\makeatletter
+\renewenvironment{CSLReferences}[2] 				% #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{
+  \setlength{\itemindent}{-1.5em} 				% Hanging indent
+  \setlength{\leftmargin}{1.5em}
+  \setlength{\parsep}{0pt}
+  % \setlength{\itemsep}{#2\baselineskip}
+  \setlength{\itemsep}{0.2\baselineskip}			% Reduce vertical space between references
+ }}
+ {\end{list}}
+\makeatother

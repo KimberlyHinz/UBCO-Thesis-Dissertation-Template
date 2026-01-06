@@ -1,0 +1,19 @@
+\doublespacing
+
+# Acknowledgements {-}
+
+In this section you can:
+
+- Acknowledge the extent to which assistance has been given by members of staff, fellow students, data technicians, editors, and/or others.
+
+- Recognize the supervision and advice given by your supervisor and committee members.
+
+- Acknowledge colleagues with whom you have written journal articles.
+
+\newpage
+
+# Dedication {-}
+
+The dedication is usually quite short, and is a personal rather than academic recognition. You can use any font or language you wish for the dedication page.
+
+\newpage
