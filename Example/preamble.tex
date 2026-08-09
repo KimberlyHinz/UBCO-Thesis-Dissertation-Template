@@ -1,83 +1,180 @@
-% --- Set main fonts -------------------------------------------
-\usepackage{fontspec}
-\setmainfont{Times New Roman}					% Set font to Times New Roman
-\usepackage{setspace}
-\onehalfspacing							% Set line spacing to 1.5
-\usepackage{ragged2e}
-\justifying      						% Justifying alignment
-\usepackage{sectsty}
+% This is the tex file for the thesis/dissertation template
 
-\usepackage{titlesec}
+% =================================================================================================
+% This is the preamble formatting for your thesis.
+% It is called and used when using R Markdown and bookdown and knitting to PDF (as opposed to HTML
+% or Word.
+% =================================================================================================
 
-\usepackage[normalem]{ulem}
+% --- Main Formatting -----------------------------------------------------------------------------
+% ----- Fonts and Paragraph Styling -----------------------------------------------------
+\usepackage{fontspec}                             % Allows the use of system fonts. WARNING: This 
+%                                                 % may require compiling with XeLaTex or LuaLaTex
+\setmainfont{Times New Roman}                     % Set font to Times New Roman
 
-% --- Table of contents ----------------------------------------
-% ----- Add leader lines -----
-\usepackage{tocloft}
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} 		% For header 1
-\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}} 	% For header 2
-\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}} 	% For header 3
+\usepackage{setspace}                             % Provides commands for controlling line spacing
+\onehalfspacing                                   % Set line spacing to 1.5
 
-% ----- Remove titles (I'm using my own) -----
-\renewcommand{\contentsname}{} 					% Removes the "Contents" title
-\renewcommand{\listfigurename}{}				% Removes the "List of Figures" title
-\renewcommand{\listtablename}{}					% Removes the "List of Tables" title
+\usepackage{ragged2e}                             % Provides improved text alignment commands
+\justifying                                       % Justify body text
 
-% ----- Add "Figure" in List of Figures -----
-% This adds the word "Figure" to the beginning of the captions
-% in the List of Figures
-\renewcommand{\cftfigpresnum}{Figure~}				% This is what appears before the numbers
-\renewcommand{\cftfigaftersnum}{.}				% This adds a period after the number
-\setlength{\cftfignumwidth}{4em}				% This increases the space after the number -- may need to be increased/decreased
+\setlength{\parindent}{1.5em}                     % Indent the beginning of every paragraph, except 
+%                                                 % the first
 
-% ----- Add "Table" in List of Tables -----
-% This adds the word "Table" to the beginning of the captions
-% in the List of Tables
-\renewcommand{\cfttabpresnum}{Table~}				% This is what appears before the numbers
-\renewcommand{\cfttabaftersnum}{.}				% This adds a period after the number
-\setlength{\cfttabnumwidth}{4em}				% This increases the space after the number -- may need to be increased/decreased
+% ----- Text Emphasis -------------------------------------------------------------------
+\usepackage[normalem]{ulem}                       % Provides underlining and strikeout commands. 
+%                                                 % The command `\uline' is used in the Committee
+%                                                 % Form Rmd and comes from this package.
 
-% --- Section header 1 styling ---------------------------------
-\sectionfont{\fontsize{14}{14}\selectfont\bfseries\centering}	% Heading 1 is size 14, 14 pt line spacing (for that line), bold, and centered
-\titlespacing*{\section}{0pt}{0pt}{0pt}
+% --- Header styling ------------------------------------------------------------------------------
+\usepackage{titlesec}                             % Controls the style and spacing of section 
+%                                                 % headers
 
-\titleformat{\section}[block]					% This removes the numbering of the heading 1 titles
-  {\normalfont\fontsize{14}{14}\bfseries\centering}
-  {}
-  {0pt}
+% ----- Section header 1 styling --------------------------------------------------------
+\titleformat{\section}[block]
+  {%
+    \normalfont
+    \fontsize{14}{14}\selectfont                  % 14 pt font with 14 pt line height
+    \bfseries                                     % Bold
+    \centering%                                   % Center
+  }
+  {}                                              % Do not add section numbers before header title
+  {0pt}                                           % No indentation to the left of the header title
   {}
 
-% --- Section header 2 styling ---------------------------------
-\subsectionfont{\fontsize{12}{12}\selectfont\bfseries}
-\titlespacing*{\subsection}{0pt}{12pt}{0pt}
+\titlespacing*{\section}{0pt}{0pt}{0pt}           % No left indentation, no vertical space above 
+%                                                 % the header, and no vertical space below the 
+%                                                 % header
 
-% --- Section header 3 styling ---------------------------------
-\subsubsectionfont{\fontsize{12}{12}\selectfont\bfseries}
-\titlespacing*{\subsubsection}{0pt}{12pt}{0pt}
+% ----- Section header 2 styling --------------------------------------------------------
+\titleformat{\subsection}[block]
+  {%
+    \normalfont
+    \fontsize{12}{12}\selectfont                  % 12 pt font with 12 pt line height
+    \bfseries%                                    % Bold
+  }
+  {\thesubsection}                                % Include the subsection number
+  {1em}                                           % Add 1em space between the subsection number 
+  %                                               % and header title
+  {}
 
-% --- Figure and table caption styling -------------------------
-\usepackage{caption}
-\captionsetup{labelfont={bf,it},font=it, 			% Bold and italicise the labels, italicise the rest
-              justification=justified, 				% Justify the caption
-              singlelinecheck=false}				% Do not justify single lines
+\titlespacing*{\subsection}{0pt}{12pt}{0pt}       % No left indentation, 12 pt vertical space above
+%                                                 % the header, and no vertical space below the 
+%                                                 % header
 
-% --- Page margins ---------------------------------------------
-\usepackage{geometry}
-\geometry{letterpaper,top=1in,bottom=1in,left=1.25in,right=1in}	% Set margins to 1 inch, except the left one is 1.25 for binding
+% ----- Section header 3 styling --------------------------------------------------------
+\titleformat{\subsubsection}[block]
+  {%
+    \normalfont
+    \fontsize{12}{12}\selectfont                  % 12 pt font with 12 pt line height
+    \bfseries%                                    % Bold
+  }
+  {\thesubsubsection}                             % Include the (level 2) subsection number
+  {1em}                                           % Add 1em space between the subsection number 
+  %                                               % and header title
+  {}
 
-% Bibliography -------------------------------------------------
-% Force hanging indent inside CSLReferences list environment
-\usepackage{etoolbox}
+\titlespacing*{\subsubsection}{0pt}{12pt}{0pt}    % No left indentation, 12 pt vertical space above
+%                                                 % the header, and no vertical space below the 
+%                                                 % header
 
-% Patch the definition of CSLReferences directly
-\makeatletter
-\renewenvironment{CSLReferences}[2] 				% #1 hanging-indent, #2 entry-spacing
+% --- Tables of Contents --------------------------------------------------------------------------
+\usepackage{tocloft}                              % Customizes the Table of Contents, list of 
+%                                                 % figures, and list of tables
+
+% ----- Add Leader Lines ----------------------------------------------------------------
+\renewcommand{\cftsecleader}{%                    % Add dotted leader lines for level 1 headings in
+  \cftdotfill{\cftdotsep}%                        % the Table of Contents
+}
+\renewcommand{\cftsubsecleader}{%                 % Add dotted leader lines for level 2 headings in
+  \cftdotfill{\cftdotsep}%                        % the Table of Contents
+}
+\renewcommand{\cftsubsubsecleader}{%              % Add dotted leader lines for level 3 headings in
+  \cftdotfill{\cftdotsep}%                        % the Table of Contents
+}
+
+% ----- Remove Titles -------------------------------------------------------------------
+% Title are already added within the Rmd files, so the default titles are not needed
+\renewcommand{\contentsname}{}                    % Remove the "Contents" title
+\renewcommand{\listfigurename}{}                  % Remove the "List of Figures" title
+\renewcommand{\listtablename}{}                   % Remove the "List of Tables" title
+
+% ----- Add "Figure" in List of Figures -------------------------------------------------
+\renewcommand{\cftfigpresnum}{Figure~}            % Add the word "Figure" before the figure numbers
+%                                                 % in the List of Figures
+\renewcommand{\cftfigaftersnum}{.}                % Add a period after the figure numbers in the 
+%                                                 % List of Figures
+\setlength{\cftfignumwidth}{5em}                  % Set the horizontal space reserved for figure 
+%                                                 % numbers in the List of Figures. WARNING: This 
+%                                                 % may need to be increased if the figure numbers
+%                                                 % overlap with the caption text.
+
+% ----- Add "Table" in List of Tables ---------------------------------------------------
+\renewcommand{\cfttabpresnum}{Table~}             % Add the word "Table" before the table numbers 
+%                                                 % in the List of Tables
+\renewcommand{\cfttabaftersnum}{.}                % Add a period after the table numbers in the 
+%                                                 % List of Tables
+\setlength{\cfttabnumwidth}{5em}                  % Set the horizontal space reserved for table 
+%                                                 % numbers in the List of Tables. WARNING: This 
+%                                                 % may need to be increased if the table numbers
+%                                                 % overlap with the caption text.
+
+% --- Caption Styling -----------------------------------------------------------------------------
+% ----- Font ----------------------------------------------------------------------------
+\usepackage{caption}                              % Allows for customization of figure and table 
+%                                                 % captions
+\captionsetup{
+  labelfont={bf,it},                              % Bold and italicize the labels
+  font=it,                                        % Italicize the caption text 
+  justification=justified,                        % Justify the caption
+  singlelinecheck=false}                          % Do not justify single lines (if the caption is
+%                                                 % just one line, then it won't force the 
+%                                                 % justification alignment
+
+% ----- Numbers -------------------------------------------------------------------------
+\usepackage{amsmath}
+\numberwithin{figure}{section}                    % Numbers figures within each level 1 section. 
+%                                                 % For example, the first figure within Chapter 2 
+%                                                 % will be numbered Figure 2.1
+
+\numberwithin{table}{section}                     % Numbers tables within each level 1 section. For 
+%                                                 % example, the first table within Chapter 2 will
+%                                                 % be numbered Table 2.1
+
+% --- Page Margins --------------------------------------------------------------------------------
+\usepackage{geometry}                             % Controls the page size and margins
+\geometry{
+  letterpaper,                                    % Use page size letter
+  top=1in,                                        % Top margin is 1 inch
+  bottom=1in,                                     % Bottom margin is 1 inch
+  left=1.25in,                                    % Left margin is 1.25 inch for binding
+  right=1in                                       % Right margin is 1 inch
+}
+
+% Bibliography ------------------------------------------------------------------------------------
+% Force hanging indent inside CSL References list environment
+\usepackage{etoolbox}                             % Provides tools for modifying existing LaTeX 
+%                                                 % commands and environments. It is being used 
+%                                                 % here because the CSLReferences environment is
+%                                                 % being redefined
+
+\makeatletter                                     % Allows use of LaTeX internal commands that 
+%                                                 % contain "@". This is needed when redefining 
+%                                                 % some environments or commands
+\renewenvironment{CSLReferences}[2]               % Redefines the CSLReferences environment 
+%                                                 % generated by Pandox/bookdown. The `[2]` means
+%                                                 % this environment takes two arguments from 
+%                                                 % Pandoc: #1 and #2. #1 is the hanging indent and
+%                                                 % #2 is the entry spacing. Instead of using them
+%                                                 % directly, they are manually set in the next 
+%                                                 % lines
  {\begin{list}{}{
-  \setlength{\itemindent}{-1.5em} 				% Hanging indent
-  \setlength{\leftmargin}{1.5em}
-  \setlength{\parsep}{0pt}
-  % \setlength{\itemsep}{#2\baselineskip}
-  \setlength{\itemsep}{0.2\baselineskip}			% Reduce vertical space between references
+  \setlength{\itemindent}{-1.5em}                 % Create the hanging indent by moving the first 
+%                                                 % line left
+  \setlength{\leftmargin}{1.5em}                  % and the other to the right.
+  \setlength{\parsep}{0pt}                        % Remove the extra space between paragraphs  
+%                                                 % within a reference entry
+  \setlength{\itemsep}{0.2\baselineskip}          % Reduce the vertical space between references
  }}
  {\end{list}}
-\makeatother
+\makeatother                                      % Restore the usual meaning of @ in command names
